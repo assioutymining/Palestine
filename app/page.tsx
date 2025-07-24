@@ -14,7 +14,6 @@ import { MessageSection } from "@/components/message-section"
 import { EmergencyCampaigns } from "@/components/emergency-campaigns"
 import { SupportCategories } from "@/components/support-categories"
 import { SeminarsSection } from "@/components/seminars-section"
-import { NewsTickerSection } from "@/components/news-ticker-section"
 import { AdminDashboard } from "@/components/admin-dashboard"
 import { JoinPage } from "@/components/join-page"
 import { PaymentPage } from "@/components/payment-page"
@@ -48,8 +47,6 @@ export default function HomePage() {
       title: "جنيه واحد لفلسطين",
       subtitle: "لسنا عاجزين... كل جنيه وقفة مع فلسطين",
       apologyText: "آسفين خذلناكم",
-      impactText: "تخيل لو 10 مليون مصري تبرعوا بجنيه واحد يومياً",
-      impactSubtext: "هذا يعني 10 مليون جنيه كل يوم لدعم فلسطين",
       joinCampaign: "انضم للحملة",
       howItWorks: "كيف تعمل الحملة",
       becomePartner: "كن شريكاً",
@@ -69,8 +66,6 @@ export default function HomePage() {
       title: "One Pound for Palestine",
       subtitle: "We are not helpless... Every Pound is a Stand for Palestine",
       apologyText: "Sorry, we let you down",
-      impactText: "Imagine if 10 million Egyptians donate 1 pound daily",
-      impactSubtext: "That means 10 million pounds every day to support Palestine",
       joinCampaign: "Join the Campaign",
       howItWorks: "How It Works",
       becomePartner: "Become a Partner",
@@ -100,21 +95,6 @@ export default function HomePage() {
         <div className="absolute top-20 left-20 w-64 h-64 bg-green-500 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-red-500 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-yellow-500 rounded-full blur-3xl animate-pulse"></div>
-      </div>
-
-      {/* Top Impact Banner */}
-      <div className="bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 text-white py-4 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent animate-pulse"></div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="flex items-center justify-center gap-2">
-            <Sparkles className="h-6 w-6 text-yellow-300 animate-spin" />
-            <h2 className="text-2xl md:text-3xl font-bold animate-pulse">{t.impactText}</h2>
-            <Sparkles className="h-6 w-6 text-yellow-300 animate-spin" />
-          </div>
-          <p className="text-lg md:text-xl font-medium mt-2 opacity-90">{t.impactSubtext}</p>
-        </div>
       </div>
 
       {/* Header */}
@@ -204,21 +184,6 @@ export default function HomePage() {
           {/* Hero Section */}
           <HeroSection language={language} />
 
-          {/* Middle Impact Banner */}
-          <div className="bg-gradient-to-r from-red-600 via-green-600 to-yellow-600 text-white py-6 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent animate-pulse"></div>
-            </div>
-            <div className="container mx-auto px-4 text-center relative z-10">
-              <div className="flex items-center justify-center gap-2">
-                <Heart className="h-8 w-8 text-red-300 animate-pulse" />
-                <h2 className="text-3xl md:text-4xl font-bold animate-pulse">{t.impactText}</h2>
-                <Heart className="h-8 w-8 text-red-300 animate-pulse" />
-              </div>
-              <p className="text-xl md:text-2xl font-medium mt-2 opacity-90">{t.impactSubtext}</p>
-            </div>
-          </div>
-
           {/* Emergency Campaigns */}
           <EmergencyCampaigns language={language} />
 
@@ -291,21 +256,6 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Bottom Impact Banner */}
-          <div className="bg-gradient-to-r from-yellow-600 via-red-600 to-green-600 text-white py-8 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent animate-pulse"></div>
-            </div>
-            <div className="container mx-auto px-4 text-center relative z-10">
-              <div className="flex items-center justify-center gap-2">
-                <Globe className="h-10 w-10 text-yellow-300 animate-spin" />
-                <h2 className="text-4xl md:text-5xl font-bold animate-pulse">{t.impactText}</h2>
-                <Globe className="h-10 w-10 text-yellow-300 animate-spin" />
-              </div>
-              <p className="text-2xl md:text-3xl font-medium mt-3 opacity-90">{t.impactSubtext}</p>
-            </div>
-          </div>
-
           {/* Call to Action */}
           <section className="py-20 bg-gradient-to-r from-green-600 via-red-600 to-black text-white relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
@@ -318,15 +268,15 @@ export default function HomePage() {
                 <Sparkles className="h-10 w-10 text-yellow-300 animate-spin" />
                 <h2 className="text-5xl font-bold">
                   {language === "ar"
-                    ? "انضم إلينا الآن في هذه المبادرة التاريخية"
-                    : "Join us now in this historic initiative"}
+                    ? "تخيل لو 10 مليون مصري تبرعوا بجنيه واحد يومياً"
+                    : "Imagine if 10 million Egyptians donate 1 pound daily"}
                 </h2>
                 <Sparkles className="h-10 w-10 text-yellow-300 animate-spin" />
               </div>
               <p className="text-2xl mb-10 opacity-90 font-medium">
                 {language === "ar"
-                  ? "كل جنيه يحدث فرقاً... كل مشاركة تعني الأمل"
-                  : "Every pound makes a difference... Every participation means hope"}
+                  ? "هذا يعني 10 مليون جنيه كل يوم لدعم فلسطين"
+                  : "That means 10 million pounds every day to support Palestine"}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Button
@@ -430,9 +380,6 @@ export default function HomePage() {
               </div>
             </div>
           </footer>
-
-          {/* News Ticker */}
-          <NewsTickerSection language={language} />
         </>
       )}
 

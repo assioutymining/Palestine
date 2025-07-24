@@ -22,7 +22,6 @@ import {
   HandHeart,
   PenTool,
   Calendar,
-  Radio,
 } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
@@ -149,95 +148,52 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
       id: 1,
       title: {
         ar: "ندوة: دور الشباب في دعم القضية الفلسطينية",
-        en: "Seminar: Youth Role in Supporting Palestinian Cause",
+        en: "Seminar: Youth Role in Supporting Palestinian Cause"
       },
       description: {
         ar: "ندوة تفاعلية حول كيفية مساهمة الشباب المصري في دعم الشعب الفلسطيني",
-        en: "Interactive seminar on how Egyptian youth can contribute to supporting the Palestinian people",
+        en: "Interactive seminar on how Egyptian youth can contribute to supporting the Palestinian people"
       },
       image: "/placeholder.svg?height=300&width=400",
       date: "2024-02-15",
       time: "19:00",
       location: {
         ar: "قاعة المؤتمرات - جامعة القاهرة",
-        en: "Conference Hall - Cairo University",
+        en: "Conference Hall - Cairo University"
       },
       speaker: {
         ar: "د. أحمد محمود - خبير في الشؤون الفلسطينية",
-        en: "Dr. Ahmed Mahmoud - Palestinian Affairs Expert",
+        en: "Dr. Ahmed Mahmoud - Palestinian Affairs Expert"
       },
       maxAttendees: 300,
       type: "offline",
-      status: "active",
+      status: "active"
     },
     {
       id: 2,
       title: {
         ar: "محاضرة: تاريخ فلسطين والنكبة",
-        en: "Lecture: History of Palestine and the Nakba",
+        en: "Lecture: History of Palestine and the Nakba"
       },
       description: {
         ar: "محاضرة تاريخية شاملة عن تاريخ فلسطين منذ العصور القديمة حتى اليوم",
-        en: "Comprehensive historical lecture about Palestine's history from ancient times to today",
+        en: "Comprehensive historical lecture about Palestine's history from ancient times to today"
       },
       image: "/placeholder.svg?height=300&width=400",
       date: "2024-02-20",
       time: "20:00",
       location: {
         ar: "عبر الإنترنت - Zoom",
-        en: "Online - Zoom",
+        en: "Online - Zoom"
       },
       speaker: {
         ar: "أ.د. فاطمة الزهراء - أستاذ التاريخ الحديث",
-        en: "Prof. Fatima Al-Zahra - Modern History Professor",
+        en: "Prof. Fatima Al-Zahra - Modern History Professor"
       },
       maxAttendees: 500,
       type: "online",
-      status: "active",
-    },
-  ])
-
-  const [newsItems, setNewsItems] = useState([
-    {
-      id: 1,
-      text: {
-        ar: "عاجل: وصول 500 ألف جنيه من التبرعات خلال الساعات الماضية لدعم الأطفال في غزة",
-        en: "Breaking: 500,000 EGP in donations received in the past hours to support children in Gaza",
-      },
-      priority: "high",
-      timestamp: new Date().toISOString(),
-      status: "active",
-    },
-    {
-      id: 2,
-      text: {
-        ar: "تحديث: انضمام 10,000 مشارك جديد للحملة اليوم من جميع أنحاء مصر",
-        en: "Update: 10,000 new participants joined the campaign today from all over Egypt",
-      },
-      priority: "medium",
-      timestamp: new Date().toISOString(),
-      status: "active",
-    },
-    {
-      id: 3,
-      text: {
-        ar: "إنجاز: تم توزيع 2000 وجبة غذائية على العائلات الفلسطينية النازحة",
-        en: "Achievement: 2000 food meals distributed to displaced Palestinian families",
-      },
-      priority: "medium",
-      timestamp: new Date().toISOString(),
-      status: "active",
-    },
-    {
-      id: 4,
-      text: {
-        ar: "شكراً لكم: بفضل تبرعاتكم تم توفير الأدوية الأساسية لـ 500 طفل فلسطيني",
-        en: "Thank you: Thanks to your donations, essential medicines were provided to 500 Palestinian children",
-      },
-      priority: "low",
-      timestamp: new Date().toISOString(),
-      status: "active",
-    },
+      status: "active"
+    }
   ])
 
   const [serviceRequests, setServiceRequests] = useState([
@@ -296,10 +252,6 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
     speaker: { ar: "", en: "" },
     maxAttendees: "",
     type: "offline",
-  })
-  const [newNewsItem, setNewNewsItem] = useState({
-    text: { ar: "", en: "" },
-    priority: "medium",
   })
   const [newCategory, setNewCategory] = useState({
     icon: "Store",
@@ -360,12 +312,10 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
       emergencyTab: "الحملات الطارئة",
       supportTab: "فئات الدعم",
       seminarsTab: "إدارة الندوات",
-      newsTab: "إدارة الأخبار",
       categoriesTab: "فئات التبرع",
       statisticsTab: "الإحصائيات",
       addImage: "إضافة صورة جديدة",
       addSeminar: "إضافة ندوة جديدة",
-      addNews: "إضافة خبر جديد",
       editImage: "تعديل الصورة",
       deleteImage: "حذف الصورة",
       imageUrl: "رابط الصورة",
@@ -411,8 +361,6 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
       seminarSpeaker: "المحاضر",
       maxAttendees: "الحد الأقصى للحضور",
       seminarType: "نوع الندوة",
-      newsText: "نص الخبر",
-      newsPriority: "أولوية الخبر",
       online: "عبر الإنترنت",
       offline: "حضوري",
       form: {
@@ -437,12 +385,10 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
       emergencyTab: "Emergency Campaigns",
       supportTab: "Support Categories",
       seminarsTab: "Manage Seminars",
-      newsTab: "Manage News",
       categoriesTab: "Donation Categories",
       statisticsTab: "Statistics",
       addImage: "Add New Image",
       addSeminar: "Add New Seminar",
-      addNews: "Add New News",
       editImage: "Edit Image",
       deleteImage: "Delete Image",
       imageUrl: "Image URL",
@@ -488,8 +434,6 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
       seminarSpeaker: "Speaker",
       maxAttendees: "Max Attendees",
       seminarType: "Seminar Type",
-      newsText: "News Text",
-      newsPriority: "News Priority",
       online: "Online",
       offline: "In-Person",
       form: {
@@ -623,28 +567,6 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
     }
   }
 
-  const handleAddNews = () => {
-    if (newNewsItem.text.ar && newNewsItem.text.en) {
-      setNewsItems([
-        ...newsItems,
-        {
-          id: Date.now(),
-          ...newNewsItem,
-          timestamp: new Date().toISOString(),
-          status: "active",
-        },
-      ])
-      setNewNewsItem({
-        text: { ar: "", en: "" },
-        priority: "medium",
-      })
-    }
-  }
-
-  const handleDeleteNews = (id: number) => {
-    setNewsItems(newsItems.filter((item) => item.id !== id))
-  }
-
   const handleAddServiceRequest = () => {
     if (newRequestForm.title && newRequestForm.description && newRequestForm.serviceType) {
       setServiceRequests([
@@ -713,7 +635,7 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
 
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
           <Tabs defaultValue="images" className="w-full">
-            <TabsList className="grid w-full grid-cols-9">
+            <TabsList className="grid w-full grid-cols-8">
               <TabsTrigger value="images" className="flex items-center gap-2">
                 <ImageIcon className="h-4 w-4" />
                 {t.imagesTab}
@@ -729,10 +651,6 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
               <TabsTrigger value="seminars" className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 {t.seminarsTab}
-              </TabsTrigger>
-              <TabsTrigger value="news" className="flex items-center gap-2">
-                <Radio className="h-4 w-4" />
-                {t.newsTab}
               </TabsTrigger>
               <TabsTrigger value="service-requests" className="flex items-center gap-2">
                 <PenTool className="h-4 w-4" />
@@ -824,71 +742,185 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
               </div>
             </TabsContent>
 
-            {/* News Tab */}
-            <TabsContent value="news" className="space-y-6">
+            {/* Seminars Tab */}
+            <TabsContent value="seminars" className="space-y-6">
               <div className="flex justify-between items-center">
-                <h3 className="text-xl font-semibold">{t.newsTab}</h3>
+                <h3 className="text-xl font-semibold">{t.seminarsTab}</h3>
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button className="bg-red-600 hover:bg-red-700">
+                    <Button className="bg-purple-600 hover:bg-purple-700">
                       <Plus className="h-4 w-4 mr-2" />
-                      {t.addNews}
+                      {t.addSeminar}
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-2xl">
+                  <DialogContent className="max-w-4xl">
                     <DialogHeader>
-                      <DialogTitle>{t.addNews}</DialogTitle>
+                      <DialogTitle>{t.addSeminar}</DialogTitle>
                     </DialogHeader>
                     <div className="space-y-4 max-h-96 overflow-y-auto">
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <Label>{t.newsText} (العربية)</Label>
-                          <Textarea
-                            value={newNewsItem.text.ar}
+                          <Label>{t.seminarTitle} (العربية)</Label>
+                          <Input
+                            value={newSeminar.title.ar}
                             onChange={(e) =>
-                              setNewNewsItem({
-                                ...newNewsItem,
-                                text: { ...newNewsItem.text, ar: e.target.value },
+                              setNewSeminar({
+                                ...newSeminar,
+                                title: { ...newSeminar.title, ar: e.target.value },
                               })
                             }
-                            rows={4}
-                            placeholder="أدخل نص الخبر باللغة العربية..."
                           />
                         </div>
                         <div>
-                          <Label>{t.newsText} (English)</Label>
-                          <Textarea
-                            value={newNewsItem.text.en}
+                          <Label>{t.seminarTitle} (English)</Label>
+                          <Input
+                            value={newSeminar.title.en}
                             onChange={(e) =>
-                              setNewNewsItem({
-                                ...newNewsItem,
-                                text: { ...newNewsItem.text, en: e.target.value },
+                              setNewSeminar({
+                                ...newSeminar,
+                                title: { ...newSeminar.title, en: e.target.value },
                               })
                             }
-                            rows={4}
-                            placeholder="Enter news text in English..."
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.seminarDescription} (العربية)</Label>
+                          <Textarea
+                            value={newSeminar.description.ar}
+                            onChange={(e) =>
+                              setNewSeminar({
+                                ...newSeminar,
+                                description: { ...newSeminar.description, ar: e.target.value },
+                              })
+                            }
+                            rows={3}
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.seminarDescription} (English)</Label>
+                          <Textarea
+                            value={newSeminar.description.en}
+                            onChange={(e) =>
+                              setNewSeminar({
+                                ...newSeminar,
+                                description: { ...newSeminar.description, en: e.target.value },
+                              })
+                            }
+                            rows={3}
                           />
                         </div>
                       </div>
 
                       <div>
-                        <Label>{t.newsPriority}</Label>
-                        <Select
-                          onValueChange={(value) => setNewNewsItem({ ...newNewsItem, priority: value })}
-                          value={newNewsItem.priority}
-                        >
-                          <SelectTrigger>
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="high">{t.high}</SelectItem>
-                            <SelectItem value="medium">{t.medium}</SelectItem>
-                            <SelectItem value="low">{t.low}</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <Label>{t.imageUrl}</Label>
+                        <Input
+                          value={newSeminar.image}
+                          onChange={(e) => setNewSeminar({ ...newSeminar, image: e.target.value })}
+                          placeholder="https://example.com/seminar-image.jpg"
+                        />
                       </div>
 
-                      <Button onClick={handleAddNews} className="w-full">
+                      <div className="grid grid-cols-4 gap-4">
+                        <div>
+                          <Label>{t.seminarDate}</Label>
+                          <Input
+                            type="date"
+                            value={newSeminar.date}
+                            onChange={(e) => setNewSeminar({ ...newSeminar, date: e.target.value })}
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.seminarTime}</Label>
+                          <Input
+                            type="time"
+                            value={newSeminar.time}
+                            onChange={(e) => setNewSeminar({ ...newSeminar, time: e.target.value })}
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.maxAttendees}</Label>
+                          <Input
+                            type="number"
+                            value={newSeminar.maxAttendees}
+                            onChange={(e) => setNewSeminar({ ...newSeminar, maxAttendees: e.target.value })}
+                            placeholder="100"
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.seminarType}</Label>
+                          <Select
+                            onValueChange={(value) => setNewSeminar({ ...newSeminar, type: value })}
+                            value={newSeminar.type}
+                          >
+                            <SelectTrigger>
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="offline">{t.offline}</SelectItem>
+                              <SelectItem value="online">{t.online}</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.seminarLocation} (العربية)</Label>
+                          <Input
+                            value={newSeminar.location.ar}
+                            onChange={(e) =>
+                              setNewSeminar({
+                                ...newSeminar,
+                                location: { ...newSeminar.location, ar: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.seminarLocation} (English)</Label>
+                          <Input
+                            value={newSeminar.location.en}
+                            onChange={(e) =>
+                              setNewSeminar({
+                                ...newSeminar,
+                                location: { ...newSeminar.location, en: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.seminarSpeaker} (العربية)</Label>
+                          <Input
+                            value={newSeminar.speaker.ar}
+                            onChange={(e) =>
+                              setNewSeminar({
+                                ...newSeminar,
+                                speaker: { ...newSeminar.speaker, ar: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.seminarSpeaker} (English)</Label>
+                          <Input
+                            value={newSeminar.speaker.en}
+                            onChange={(e) =>
+                              setNewSeminar({
+                                ...newSeminar,
+                                speaker: { ...newSeminar.speaker, en: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                      </div>
+
+                      <Button onClick={handleAddSeminar} className="w-full">
                         {t.save}
                       </Button>
                     </div>
@@ -897,30 +929,47 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
               </div>
 
               <div className="space-y-4">
-                {newsItems.map((item) => (
-                  <Card key={item.id} className="border-l-4 border-l-red-500">
+                {seminars.map((seminar) => (
+                  <Card key={seminar.id} className="border-l-4 border-l-purple-500">
                     <CardHeader>
                       <div className="flex justify-between items-start">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <Badge className={`${getPriorityColor(item.priority)} border`}>{t[item.priority]}</Badge>
-                            <span className="text-sm text-gray-500">
-                              {new Date(item.timestamp).toLocaleString(language === "ar" ? "ar-EG" : "en-US")}
-                            </span>
+                            <CardTitle className="text-lg">{seminar.title[language]}</CardTitle>
+                            <Badge className={`${seminar.type === 'online' ? 'bg-blue-500' : 'bg-green-500'} text-white`}>
+                              {t[seminar.type]}
+                            </Badge>
                           </div>
-                          <CardDescription className="mb-3 text-base">{item.text[language]}</CardDescription>
+                          <CardDescription className="mb-3">{seminar.description[language]}</CardDescription>
+                          <div className="grid grid-cols-4 gap-4 text-sm">
+                            <div>
+                              <span className="font-medium">{t.seminarDate}:</span>
+                              <p>{seminar.date}</p>
+                            </div>
+                            <div>
+                              <span className="font-medium">{t.seminarTime}:</span>
+                              <p>{seminar.time}</p>
+                            </div>
+                            <div>
+                              <span className="font-medium">{t.seminarLocation}:</span>
+                              <p>{seminar.location[language]}</p>
+                            </div>
+                            <div>
+                              <span className="font-medium">{t.maxAttendees}:</span>
+                              <p>{seminar.maxAttendees}</p>
+                            </div>
+                          </div>
+                          <div className="mt-3 bg-gray-50 rounded p-2">
+                            <span className="font-medium text-sm">{t.seminarSpeaker}:</span>
+                            <p className="text-sm">{seminar.speaker[language]}</p>
+                          </div>
                         </div>
                         <div className="flex gap-2 ml-4">
                           <Button size="sm" variant="outline">
                             <Edit className="h-3 w-3 mr-1" />
                             {language === "ar" ? "تعديل" : "Edit"}
                           </Button>
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            className="text-red-600 bg-transparent"
-                            onClick={() => handleDeleteNews(item.id)}
-                          >
+                          <Button size="sm" variant="outline" className="text-red-600 bg-transparent">
                             <Trash2 className="h-3 w-3 mr-1" />
                             {language === "ar" ? "حذف" : "Delete"}
                           </Button>
@@ -932,56 +981,870 @@ export function AdminDashboard({ language, onClose }: AdminDashboardProps) {
               </div>
             </TabsContent>
 
-            {/* Other tabs remain the same as in the previous code... */}
-            {/* I'll continue with the remaining tabs to complete the component */}
+            {/* Emergency Campaigns Tab - Previous code remains the same */}
+            <TabsContent value="emergency" className="space-y-6">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-semibold">{t.emergencyTab}</h3>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="bg-red-600 hover:bg-red-700">
+                      <Plus className="h-4 w-4 mr-2" />
+                      {t.addEmergencyCampaign}
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle>{t.addEmergencyCampaign}</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4 max-h-96 overflow-y-auto">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.campaignTitle} (العربية)</Label>
+                          <Input
+                            value={newEmergencyCampaign.title.ar}
+                            onChange={(e) =>
+                              setNewEmergencyCampaign({
+                                ...newEmergencyCampaign,
+                                title: { ...newEmergencyCampaign.title, ar: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.campaignTitle} (English)</Label>
+                          <Input
+                            value={newEmergencyCampaign.title.en}
+                            onChange={(e) =>
+                              setNewEmergencyCampaign({
+                                ...newEmergencyCampaign,
+                                title: { ...newEmergencyCampaign.title, en: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                      </div>
 
-            {/* Statistics Tab */}
-            <TabsContent value="statistics" className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{t.totalDonations}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-3xl font-bold text-green-600">45,230,000</p>
-                    <p className="text-sm text-gray-600">{language === "ar" ? "جنيه مصري" : "EGP"}</p>
-                  </CardContent>
-                </Card>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.campaignDescription} (العربية)</Label>
+                          <Textarea
+                            value={newEmergencyCampaign.description.ar}
+                            onChange={(e) =>
+                              setNewEmergencyCampaign({
+                                ...newEmergencyCampaign,
+                                description: { ...newEmergencyCampaign.description, ar: e.target.value },
+                              })
+                            }
+                            rows={3}
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.campaignDescription} (English)</Label>
+                          <Textarea
+                            value={newEmergencyCampaign.description.en}
+                            onChange={(e) =>
+                              setNewEmergencyCampaign({
+                                ...newEmergencyCampaign,
+                                description: { ...newEmergencyCampaign.description, en: e.target.value },
+                              })
+                            }
+                            rows={3}
+                          />
+                        </div>
+                      </div>
 
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{t.totalParticipants}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-3xl font-bold text-blue-600">2,500,000</p>
-                    <p className="text-sm text-gray-600">{language === "ar" ? "مشارك" : "Participants"}</p>
-                  </CardContent>
-                </Card>
+                      <div className="grid grid-cols-3 gap-4">
+                        <div>
+                          <Label>{t.targetAmount}</Label>
+                          <Input
+                            type="number"
+                            value={newEmergencyCampaign.targetAmount}
+                            onChange={(e) =>
+                              setNewEmergencyCampaign({ ...newEmergencyCampaign, targetAmount: e.target.value })
+                            }
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.deadline}</Label>
+                          <Input
+                            type="date"
+                            value={newEmergencyCampaign.deadline}
+                            onChange={(e) =>
+                              setNewEmergencyCampaign({ ...newEmergencyCampaign, deadline: e.target.value })
+                            }
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.priority}</Label>
+                          <select
+                            className="w-full p-2 border rounded"
+                            value={newEmergencyCampaign.priority}
+                            onChange={(e) =>
+                              setNewEmergencyCampaign({ ...newEmergencyCampaign, priority: e.target.value })
+                            }
+                          >
+                            <option value="high">{t.high}</option>
+                            <option value="medium">{t.medium}</option>
+                            <option value="low">{t.low}</option>
+                          </select>
+                        </div>
+                      </div>
 
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{t.newsTab}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-3xl font-bold text-red-600">{newsItems.length}</p>
-                    <p className="text-sm text-gray-600">{language === "ar" ? "خبر نشط" : "Active News"}</p>
-                  </CardContent>
-                </Card>
+                      <Button onClick={handleAddEmergencyCampaign} className="w-full">
+                        {t.save}
+                      </Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
 
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{t.seminarsTab}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-3xl font-bold text-purple-600">{seminars.length}</p>
-                    <p className="text-sm text-gray-600">{language === "ar" ? "ندوة متاحة" : "Available Seminars"}</p>
-                  </CardContent>
-                </Card>
+              <div className="space-y-4">
+                {emergencyCampaigns.map((campaign) => (
+                  <Card key={campaign.id} className="border-l-4 border-l-red-500">
+                    <CardHeader>
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <CardTitle className="text-lg">{campaign.title[language]}</CardTitle>
+                            <span className={`px-2 py-1 rounded-full text-xs ${getPriorityColor(campaign.priority)}`}>
+                              {t[campaign.priority]}
+                            </span>
+                          </div>
+                          <CardDescription className="mb-3">{campaign.description[language]}</CardDescription>
+                          <div className="grid grid-cols-3 gap-4 text-sm">
+                            <div>
+                              <span className="font-medium">{t.targetAmount}:</span>
+                              <p>
+                                {campaign.targetAmount.toLocaleString()} {language === "ar" ? "جنيه" : "EGP"}
+                              </p>
+                            </div>
+                            <div>
+                              <span className="font-medium">{t.currentAmount}:</span>
+                              <p>
+                                {campaign.currentAmount.toLocaleString()} {language === "ar" ? "جنيه" : "EGP"}
+                              </p>
+                            </div>
+                            <div>
+                              <span className="font-medium">{t.deadline}:</span>
+                              <p>{campaign.deadline}</p>
+                            </div>
+                          </div>
+                          <div className="mt-3">
+                            <div className="flex justify-between text-sm mb-1">
+                              <span>{t.progress}</span>
+                              <span>{Math.round((campaign.currentAmount / campaign.targetAmount) * 100)}%</span>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-2">
+                              <div
+                                className="bg-red-600 h-2 rounded-full"
+                                style={{ width: `${(campaign.currentAmount / campaign.targetAmount) * 100}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex gap-2 ml-4">
+                          <Button size="sm" variant="outline">
+                            <Edit className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "تعديل" : "Edit"}
+                          </Button>
+                          <Button size="sm" variant="outline" className="text-red-600 bg-transparent">
+                            <Trash2 className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "حذف" : "Delete"}
+                          </Button>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                ))}
               </div>
             </TabsContent>
-          </Tabs>
-        </div>
-      </div>
-    </div>
-  )
-}
+
+            {/* Support Categories Tab - Previous code remains the same */}
+            <TabsContent value="support" className="space-y-6">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-semibold">{t.supportTab}</h3>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="bg-blue-600 hover:bg-blue-700">
+                      <Plus className="h-4 w-4 mr-2" />
+                      {t.addSupportCategory}
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle>{t.addSupportCategory}</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4 max-h-96 overflow-y-auto">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.categoryTitle} (العربية)</Label>
+                          <Input
+                            value={newSupportCategory.title.ar}
+                            onChange={(e) =>
+                              setNewSupportCategory({
+                                ...newSupportCategory,
+                                title: { ...newSupportCategory.title, ar: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.categoryTitle} (English)</Label>
+                          <Input
+                            value={newSupportCategory.title.en}
+                            onChange={(e) =>
+                              setNewSupportCategory({
+                                ...newSupportCategory,
+                                title: { ...newSupportCategory.title, en: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.campaignDescription} (العربية)</Label>
+                          <Textarea
+                            value={newSupportCategory.description.ar}
+                            onChange={(e) =>
+                              setNewSupportCategory({
+                                ...newSupportCategory,
+                                description: { ...newSupportCategory.description, ar: e.target.value },
+                              })
+                            }
+                            rows={2}
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.campaignDescription} (English)</Label>
+                          <Textarea
+                            value={newSupportCategory.description.en}
+                            onChange={(e) =>
+                              setNewSupportCategory({
+                                ...newSupportCategory,
+                                description: { ...newSupportCategory.description, en: e.target.value },
+                              })
+                            }
+                            rows={2}
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label>{t.categoryIcon}</Label>
+                        <div className="grid grid-cols-6 gap-2 mt-2">
+                          {["Heart", "Apple", "BookOpen", "Home", "Shield", "Stethoscope"].map((icon) => (
+                            <button
+                              key={icon}
+                              type="button"
+                              onClick={() => setNewSupportCategory({ ...newSupportCategory, icon })}
+                              className={`p-2 border rounded ${newSupportCategory.icon === icon ? "border-blue-500 bg-blue-50" : "border-gray-200"}`}
+                            >
+                              {icon}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex justify-between items-center mb-2">
+                          <Label>{t.supportItems}</Label>
+                          <Button
+                            type="button"
+                            size="sm"
+                            onClick={() =>
+                              setNewSupportCategory({
+                                ...newSupportCategory,
+                                items: [...newSupportCategory.items, { ar: "", en: "", cost: 0 }],
+                              })
+                            }
+                          >
+                            <Plus className="h-3 w-3 mr-1" />
+                            {t.addItem}
+                          </Button>
+                        </div>
+                        {newSupportCategory.items.map((item, index) => (
+                          <div key={index} className="grid grid-cols-5 gap-2 mb-2">
+                            <Input
+                              placeholder="العربية"
+                              value={item.ar}
+                              onChange={(e) => {
+                                const newItems = [...newSupportCategory.items]
+                                newItems[index].ar = e.target.value
+                                setNewSupportCategory({ ...newSupportCategory, items: newItems })
+                              }}
+                            />
+                            <Input
+                              placeholder="English"
+                              value={item.en}
+                              onChange={(e) => {
+                                const newItems = [...newSupportCategory.items]
+                                newItems[index].en = e.target.value
+                                setNewSupportCategory({ ...newSupportCategory, items: newItems })
+                              }}
+                            />
+                            <Input
+                              type="number"
+                              placeholder={t.itemCost}
+                              value={item.cost}
+                              onChange={(e) => {
+                                const newItems = [...newSupportCategory.items]
+                                newItems[index].cost = Number.parseInt(e.target.value) || 0
+                                setNewSupportCategory({ ...newSupportCategory, items: newItems })
+                              }}
+                            />
+                            <span className="text-sm text-gray-500 flex items-center">
+                              {language === "ar" ? "جنيه" : "EGP"}
+                            </span>
+                            {newSupportCategory.items.length > 1 && (
+                              <Button
+                                type="button"
+                                size="sm"
+                                variant="outline"
+                                onClick={() => {
+                                  const newItems = newSupportCategory.items.filter((_, i) => i !== index)
+                                  setNewSupportCategory({ ...newSupportCategory, items: newItems })
+                                }}
+                              >
+                                <Trash2 className="h-3 w-3" />
+                              </Button>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+
+                      <Button onClick={handleAddSupportCategory} className="w-full">
+                        {t.save}
+                      </Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {supportCategories.map((category) => (
+                  <Card key={category.id} className="border-l-4 border-l-blue-500">
+                    <CardHeader>
+                      <div className="flex justify-between items-start">
+                        <div className="flex items-center gap-2">
+                          <div className="p-2 bg-blue-100 rounded-lg">
+                            <span className="text-blue-600">{category.icon}</span>
+                          </div>
+                          <div>
+                            <CardTitle className="text-lg">{category.title[language]}</CardTitle>
+                            <CardDescription>{category.description[language]}</CardDescription>
+                          </div>
+                        </div>
+                        <div className="flex gap-2">
+                          <Button size="sm" variant="outline">
+                            <Edit className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "تعديل" : "Edit"}
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="text-red-600 hover:text-red-700 bg-transparent"
+                          >
+                            <Trash2 className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "حذف" : "Delete"}
+                          </Button>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {category.items.map((item, index) => (
+                          <div key={index} className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                            <span className="text-sm">{item[language]}</span>
+                            <span className="text-sm font-medium text-blue-600">
+                              {item.cost} {language === "ar" ? "جنيه" : "EGP"}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Service Requests Tab - Previous code remains the same */}
+            <TabsContent value="service-requests" className="space-y-6">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-semibold">{t.serviceRequestsTab}</h3>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="bg-purple-600 hover:bg-purple-700">
+                      <Plus className="h-4 w-4 mr-2" />
+                      {t.addServiceRequest}
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle>{t.addServiceRequest}</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4 max-h-96 overflow-y-auto">
+                      <div>
+                        <Label>{t.form.title}</Label>
+                        <Input
+                          value={newRequestForm.title}
+                          onChange={(e) => setNewRequestForm({ ...newRequestForm, title: e.target.value })}
+                        />
+                      </div>
+
+                      <div>
+                        <Label>{t.form.description}</Label>
+                        <Textarea
+                          value={newRequestForm.description}
+                          onChange={(e) => setNewRequestForm({ ...newRequestForm, description: e.target.value })}
+                          rows={4}
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-4">
+                        <div>
+                          <Label>{t.form.serviceType}</Label>
+                          <Select
+                            onValueChange={(value) => setNewRequestForm({ ...newRequestForm, serviceType: value })}
+                          >
+                            <SelectTrigger>
+                              <SelectValue placeholder={t.form.serviceType} />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="printing">
+                                {language === "ar" ? "خدمات الطباعة والنشر" : "Printing & Publishing Services"}
+                              </SelectItem>
+                              <SelectItem value="design">
+                                {language === "ar" ? "التصميم الجرافيكي" : "Graphic Design"}
+                              </SelectItem>
+                              <SelectItem value="advertising">
+                                {language === "ar" ? "الإعلان والتسويق" : "Advertising & Marketing"}
+                              </SelectItem>
+                              <SelectItem value="programming">
+                                {language === "ar" ? "البرمجة والتطوير" : "Programming & Development"}
+                              </SelectItem>
+                              <SelectItem value="mobile">
+                                {language === "ar" ? "تطوير التطبيقات" : "Mobile App Development"}
+                              </SelectItem>
+                              <SelectItem value="content">
+                                {language === "ar" ? "كتابة المحتوى" : "Content Writing"}
+                              </SelectItem>
+                              <SelectItem value="blogging">
+                                {language === "ar" ? "التدوين والنشر" : "Blogging & Publishing"}
+                              </SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                        <div>
+                          <Label>{t.form.deadline}</Label>
+                          <Input
+                            type="date"
+                            value={newRequestForm.deadline}
+                            onChange={(e) => setNewRequestForm({ ...newRequestForm, deadline: e.target.value })}
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.form.priority}</Label>
+                          <Select onValueChange={(value) => setNewRequestForm({ ...newRequestForm, priority: value })}>
+                            <SelectTrigger>
+                              <SelectValue placeholder={t.form.priority} />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="high">{t.high}</SelectItem>
+                              <SelectItem value="medium">{t.medium}</SelectItem>
+                              <SelectItem value="low">{t.low}</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
+
+                      <Button onClick={handleAddServiceRequest} className="w-full">
+                        {t.save}
+                      </Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              <div className="space-y-4">
+                {serviceRequests.map((request) => (
+                  <Card key={request.id} className="border-l-4 border-l-purple-500">
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <CardTitle className="text-lg">{request.title}</CardTitle>
+                            <Badge className={`${getPriorityColor(request.priority)} border`}>
+                              {t[request.priority]}
+                            </Badge>
+                            <Badge className={`${getStatusColor(request.status)} border`}>
+                              {t.status[request.status]}
+                            </Badge>
+                          </div>
+                          <CardDescription className="mb-3">{request.description}</CardDescription>
+                          <div className="grid grid-cols-3 gap-4 text-sm">
+                            <div>
+                              <span className="font-medium">{t.form.serviceType}:</span>
+                              <p>{request.serviceType}</p>
+                            </div>
+                            <div>
+                              <span className="font-medium">{t.form.deadline}:</span>
+                              <p>{request.deadline}</p>
+                            </div>
+                            <div>
+                              <span className="font-medium">تاريخ الإنشاء:</span>
+                              <p>{request.createdAt}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex gap-2 ml-4">
+                          <Button size="sm" variant="outline">
+                            <Edit className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "تعديل" : "Edit"}
+                          </Button>
+                          <Button size="sm" variant="outline" className="text-red-600 bg-transparent">
+                            <Trash2 className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "حذف" : "Delete"}
+                          </Button>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Donation Categories Tab - Previous code remains the same */}
+            <TabsContent value="categories" className="space-y-6">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-semibold">{t.categoriesTab}</h3>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="bg-green-600 hover:bg-green-700">
+                      <Plus className="h-4 w-4 mr-2" />
+                      {t.addItem}
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle>{t.addItem}</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4 max-h-96 overflow-y-auto">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.categoryTitle} (العربية)</Label>
+                          <Input
+                            value={newCategory.title.ar}
+                            onChange={(e) =>
+                              setNewCategory({
+                                ...newCategory,
+                                title: { ...newCategory.title, ar: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.categoryTitle} (English)</Label>
+                          <Input
+                            value={newCategory.title.en}
+                            onChange={(e) =>
+                              setNewCategory({
+                                ...newCategory,
+                                title: { ...newCategory.title, en: e.target.value },
+                              })
+                            }
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.campaignDescription} (العربية)</Label>
+                          <Textarea
+                            value={newCategory.description.ar}
+                            onChange={(e) =>
+                              setNewCategory({
+                                ...newCategory,
+                                description: { ...newCategory.description, ar: e.target.value },
+                              })
+                            }
+                            rows={2}
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.campaignDescription} (English)</Label>
+                          <Textarea
+                            value={newCategory.description.en}
+                            onChange={(e) =>
+                              setNewCategory({
+                                ...newCategory,
+                                description: { ...newCategory.description, en: e.target.value },
+                              })
+                            }
+                            rows={2}
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label>{t.categoryIcon}</Label>
+                        <div className="grid grid-cols-6 gap-2 mt-2">
+                          {["Heart", "Apple", "BookOpen", "Home", "Shield", "Stethoscope"].map((icon) => (
+                            <button
+                              key={icon}
+                              type="button"
+                              onClick={() => setNewCategory({ ...newCategory, icon })}
+                              className={`p-2 border rounded ${newCategory.icon === icon ? "border-blue-500 bg-blue-50" : "border-gray-200"}`}
+                            >
+                              {icon}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex justify-between items-center mb-2">
+                          <Label>{t.donationItems}</Label>
+                          <Button
+                            type="button"
+                            size="sm"
+                            onClick={() =>
+                              setNewCategory({
+                                ...newCategory,
+                                items: [...newCategory.items, { ar: "", en: "" }],
+                              })
+                            }
+                          >
+                            <Plus className="h-3 w-3 mr-1" />
+                            {t.addItem}
+                          </Button>
+                        </div>
+                        {newCategory.items.map((item, index) => (
+                          <div key={index} className="grid grid-cols-4 gap-2 mb-2">
+                            <Input
+                              placeholder="العربية"
+                              value={item.ar}
+                              onChange={(e) => {
+                                const newItems = [...newCategory.items]
+                                newItems[index].ar = e.target.value
+                                setNewCategory({ ...newCategory, items: newItems })
+                              }}
+                            />
+                            <Input
+                              placeholder="English"
+                              value={item.en}
+                              onChange={(e) => {
+                                const newItems = [...newCategory.items]
+                                newItems[index].en = e.target.value
+                                setNewCategory({ ...newCategory, items: newItems })
+                              }}
+                            />
+                            <span className="text-sm text-gray-500 flex items-center">
+                              {language === "ar" ? "جنيه" : "EGP"}
+                            </span>
+                            {newCategory.items.length > 1 && (
+                              <Button
+                                type="button"
+                                size="sm"
+                                variant="outline"
+                                onClick={() => {
+                                  const newItems = newCategory.items.filter((_, i) => i !== index)
+                                  setNewCategory({ ...newCategory, items: newItems })
+                                }}
+                              >
+                                <Trash2 className="h-3 w-3" />
+                              </Button>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+
+                      <Button onClick={handleAddCategory} className="w-full">
+                        {t.save}
+                      </Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {donationCategories.map((category) => (
+                  <Card key={category.id} className="border-l-4 border-l-green-500">
+                    <CardHeader>
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <CardTitle className="text-lg">{category.title?.[language] || "Untitled"}</CardTitle>
+                          </div>
+                          <CardDescription className="mb-3">{category.description?.[language] || ""}</CardDescription>
+                          <div className="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                              <span className="font-medium">{t.categoryIcon}:</span>
+                              <p>{category.icon}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex gap-2 ml-4">
+                          <Button size="sm" variant="outline">
+                            <Edit className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "تعديل" : "Edit"}
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="text-red-600 bg-transparent"
+                            onClick={() => handleDeleteCategory(category.id)}
+                          >
+                            <Trash2 className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "حذف" : "Delete"}
+                          </Button>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {category.items?.map((item, index) => (
+                          <div key={index} className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                            <span className="text-sm">{item?.[language] || "No description"}</span>
+                            <span className="text-sm font-medium text-blue-600">
+                              {language === "ar" ? "جنيه" : "EGP"}
+                            </span>
+                          </div>
+                        )) || []}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Campaigns Tab - Previous code remains the same */}
+            <TabsContent value="campaigns" className="space-y-6">
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-semibold">{t.campaignsTab}</h3>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="bg-blue-600 hover:bg-blue-700">
+                      <Plus className="h-4 w-4 mr-2" />
+                      {t.addCampaign}
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle>{t.addCampaign}</DialogTitle>
+                    </DialogHeader>
+                    <div className="space-y-4 max-h-96 overflow-y-auto">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.campaignTitle} (العربية)</Label>
+                          <Input
+                            value={newCampaign.title}
+                            onChange={(e) =>
+                              setNewCampaign({
+                                ...newCampaign,
+                                title: e.target.value,
+                              })
+                            }
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.campaignTitle} (English)</Label>
+                          <Input
+                            value={newCampaign.title}
+                            onChange={(e) =>
+                              setNewCampaign({
+                                ...newCampaign,
+                                title: e.target.value,
+                              })
+                            }
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label>{t.campaignDescription} (العربية)</Label>
+                          <Textarea
+                            value={newCampaign.description}
+                            onChange={(e) =>
+                              setNewCampaign({
+                                ...newCampaign,
+                                description: e.target.value,
+                              })
+                            }
+                            rows={2}
+                          />
+                        </div>
+                        <div>
+                          <Label>{t.campaignDescription} (English)</Label>
+                          <Textarea
+                            value={newCampaign.description}
+                            onChange={(e) =>
+                              setNewCampaign({
+                                ...newCampaign,
+                                description: e.target.value,
+                              })
+                            }
+                            rows={2}
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label>{t.targetAmount}</Label>
+                        <Input
+                          type="number"
+                          value={newCampaign.targetAmount}
+                          onChange={(e) =>
+                            setNewCampaign({
+                              ...newCampaign,
+                              targetAmount: e.target.value,
+                            })
+                          }
+                        />
+                      </div>
+
+                      <Button onClick={handleAddCampaign} className="w-full">
+                        {t.save}
+                      </Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {campaigns.map((campaign) => (
+                  <Card key={campaign.id} className="border-l-4 border-l-blue-500">
+                    <CardHeader>
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <CardTitle className="text-lg">{campaign.title}</CardTitle>
+                          </div>
+                          <div className="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                              <span className="font-medium">{t.participants}:</span>
+                              <p>{campaign.participants.toLocaleString()}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex gap-2 ml-4">
+                          <Button size="sm" variant="outline">
+                            <Edit className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "تعديل" : "Edit"}
+                          </Button>
+                          <Button size="sm" variant="outline" className="text-red-600 bg-transparent">
+                            <Trash2 className="h-3 w-3 mr-1" />
+                            {language === "ar" ? "حذف" : "Delete"}
+                          </Button>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Statistics Tab - Previous code remains the same */}
+            <TabsContent value="statistics\
